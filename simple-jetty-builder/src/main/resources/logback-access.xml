@@ -1,0 +1,17 @@
+<configuration>
+    <appender name="accessLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <append>true</append>
+        <file>target/logs/jetty-access.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover -->
+            <fileNamePattern>target/logs/archive/jetty-access.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>combined</pattern>
+        </encoder>
+    </appender>
+                               
+    <appender-ref ref="accessLog" />
+</configuration>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<table name="post_kontor">
+		<column>navn</column>
+		<column>postnummer_liste</column>
+		<row>
+			<value>Tøyen</value>
+			<value>1001 1002 1003 1004 1005 1006</value>
+		</row>
+		<row>
+			<value>Grønland</value>
+			<value>1100 1101 1102</value>
+		</row>
+		<row>
+			<value>Sentrum</value>
+			<value>0050 0051 0052 0053 0054 0055 0056 0057 0058 0059 0060</value>
+		</row>
+	</table>
+</dataset>
