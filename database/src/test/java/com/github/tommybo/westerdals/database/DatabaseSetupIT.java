@@ -5,15 +5,14 @@
  */
 package com.github.tommybo.westerdals.database;
 
+import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import org.assertj.core.api.Assertions;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
@@ -25,14 +24,14 @@ public class DatabaseSetupIT {
 
 	private Connection connection;
 
-	@BeforeClass
-	public static void setUpClass() throws ClassNotFoundException {
-		Class.forName("org.apache.derby.jdbc.ClientDriver");
-	}
-
 	@Before
 	public void getConnection() throws SQLException {
-		connection = DriverManager.getConnection("jdbc:derby://localhost/memory:test", "sa", "pw");
+		MysqlDataSource ds = new MysqlDataSource();
+		ds.setDatabaseName("test");
+		ds.setServerName("localhost");
+		ds.setUser("student");
+		ds.setPassword("student");
+		connection = ds.getConnection();
 	}
 
 	@After
