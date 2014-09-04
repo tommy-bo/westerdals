@@ -21,6 +21,7 @@ import org.junit.Test;
  * @author Tommy Bø
  */
 public class DatabaseSetupIT {
+	private static final String FINN_POSTKONTOR_I_DATABASEN = "Tøyen";
 
 	private Connection connection;
 
@@ -48,7 +49,7 @@ public class DatabaseSetupIT {
 		while(rs.next()) {
 			String navn = rs.getString("navn");
 			System.out.println("Fant " + navn);
-			if("Tøyen".equals(navn)) {
+			if(FINN_POSTKONTOR_I_DATABASEN.equals(navn)) {
 				return;
 			}
 		}

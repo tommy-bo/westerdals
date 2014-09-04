@@ -25,7 +25,7 @@ public class Postkontor {
 		return new Builder();
 	}
 
-	private static class Builder {
+	public static class Builder {
 
 		private String navn;
 		private ImmutableSet<String> postnummer;
